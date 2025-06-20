@@ -2,6 +2,14 @@
   hosts: backend
   become: yes
   tasks:
+  - name: install PyMySQL
+    ansible.builtin.pip:
+      name: "{{ item }}"
+      executable: pip3.9
+    loop:
+    - PyMySQL
+    - cryptography
+    
   - name: disabling nodejs 16
     ansible.builtin.command: dnf module disable nodejs -y
 
@@ -53,13 +61,7 @@
       login_password: ExpenseApp@1
       login_host: mysql.daws17s.online
       target: /app/schema/backend.sql
-  - name: install PyMySQL
-    ansible.builtin.pip:
-      name: "{{ item }}"
-      executable: pip3.9
-    loop:
-    - PyMySQL
-    - cryptography
+  
 
   - name: demon relaod and restart backend
     ansible.builtin.systemd_service:
