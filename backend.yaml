@@ -42,7 +42,7 @@
   - name: copying backend service
     ansible.builtin.copy:
      src: backend.service
-     destination: /etc/systemd/system/backend.service
+     dest: /etc/systemd/system/backend.service
 
   - name: mysql import data
     community.mysql.mysql_db:
@@ -52,4 +52,5 @@
       login_password: ExpenseApp@1
       login_host: mysql.daws17s.online
       target: /app/schema/backend.sql
+
     
