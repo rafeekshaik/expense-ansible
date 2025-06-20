@@ -1,10 +1,8 @@
 - name: installing mysql-server
   hosts: mysql
   become: yes
-- name: credentials
-  vars:
-   
-    rafeek2: DevOps321
+
+ 
 
   tasks:
   - name: installing PyMySQL
@@ -26,7 +24,7 @@
   - name: connecting to mysql-server
     community.mysql.mysql_info:
       login_user: root
-      login_password: rafeek2
+      login_password: DevOps321
       login_host: mysql.daws17s.online
     
     register: mysql_info
