@@ -3,7 +3,7 @@
   become: yes
 - name: credentials
   vars:
-    rafeek1: root
+   
     rafeek2: DevOps321
 
   tasks:
@@ -25,7 +25,7 @@
   
   - name: connecting to mysql-server
     community.mysql.mysql_info:
-      login_user: rafeek1
+      login_user: root
       login_password: rafeek2
       login_host: mysql.daws17s.online
     
