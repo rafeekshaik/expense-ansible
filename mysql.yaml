@@ -1,6 +1,7 @@
 - name: installing mysql-server
   hosts: mysql
   become: yes
+  vars:
 
  
 
@@ -28,6 +29,7 @@
       login_host: mysql.daws17s.online
     
     register: mysql_info
+    ignore_errors: true
   
 
   - name: print the output
