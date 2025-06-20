@@ -36,4 +36,10 @@
     community.general.npm:
       path: /app
 
+  - name: copying backend service
+    ansible.builtin.copy:
+     src: backend.service
+     destination: /etc/systemd/system/backend.service
+
+
     
