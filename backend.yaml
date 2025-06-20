@@ -8,14 +8,14 @@
   - name: enabling node 20
     ansible.builtin.command: dnf module enable nodejs:20 -y
   
-  - name: install nodejs
-    ansible.builtin.pip:
-       name: "{{ item }}"
-       executable: pip3.9
+  - name: install nodejs 
+    ansible.builtin.package:
+      name: "{{ item }}"
+      state: presnet
     loop:
     - nodejs
     - mysql
-    - PyMySQL
+   
   - name: crete user expense
     ansible.builtin.user:
       name: expense
@@ -53,6 +53,11 @@
       login_password: ExpenseApp@1
       login_host: mysql.daws17s.online
       target: /app/schema/backend.sql
+  - name: install PyMySQL
+    ansible.builtin.pip:
+      name: PyMySQL
+      executable: pip3.9
+      
 
   - name: demon relaod and restart backend
     ansible.builtin.systemd_service:
