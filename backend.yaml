@@ -9,7 +9,7 @@
     loop:
     - PyMySQL
     - cryptography
-    
+
   - name: disabling nodejs 16
     ansible.builtin.command: dnf module disable nodejs -y
 
@@ -65,7 +65,8 @@
 
   - name: demon relaod and restart backend
     ansible.builtin.systemd_service:
-      state: restarted
-      demon_reload: true
-      enabled: true
-      name: backend
+       enabled: true
+       state: restarted
+       daemon_reload: true
+       name: backend
+       
