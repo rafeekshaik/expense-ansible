@@ -27,7 +27,7 @@
   - name: connecting to mysql-server
     community.mysql.mysql_info:
       login_user: root
-      login_password: DevOps321
+      login_password: ExpenseApp@1
       login_host: mysql.daws17s.online
     
     register: mysql_info
