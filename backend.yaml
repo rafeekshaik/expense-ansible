@@ -12,4 +12,6 @@
     ansible.builtin.package:
        name: nodejs
        state: present
-       
+  - name: crete user expense
+    ansible.builtin.user:
+      name: expense
