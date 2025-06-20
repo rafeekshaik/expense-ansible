@@ -11,7 +11,7 @@
   - name: install nodejs 
     ansible.builtin.package:
       name: "{{ item }}"
-      state: presnet
+      state: present
     loop:
     - nodejs
     - mysql
@@ -57,7 +57,7 @@
     ansible.builtin.pip:
       name: PyMySQL
       executable: pip3.9
-      
+
 
   - name: demon relaod and restart backend
     ansible.builtin.systemd_service:
