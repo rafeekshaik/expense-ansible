@@ -55,9 +55,11 @@
       target: /app/schema/backend.sql
   - name: install PyMySQL
     ansible.builtin.pip:
-      name: PyMySQL
+      name: "{{ item }}"
       executable: pip3.9
-
+    loop:
+    - PyMySQL
+    - cryptography
 
   - name: demon relaod and restart backend
     ansible.builtin.systemd_service:
