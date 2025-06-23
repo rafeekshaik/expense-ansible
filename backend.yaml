@@ -11,6 +11,8 @@
     ansible.builtin.package:
       name: nodejs
       state: installed
-      
+  - name: adding expenseuser
+    ansible.builtin.user:
+      name: expense
   
     
