@@ -13,6 +13,15 @@
         name: mysqld
         enabled: yes
         state: started
+
+  - name: installing PyMySQL and cryptography
+    ansible.builtin.pip:
+      name: "{{ item }}"
+      executable: pip3.9
+    loop:
+    - PyMySQL
+    - cryptography
+    
   - name: connecting mysql db
     community.mysql.mysql_info:
        login_user: root
