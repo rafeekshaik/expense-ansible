@@ -14,7 +14,11 @@
   - name: adding expenseuser
     ansible.builtin.user:
       name: expense
-  
+  - name: installing mysql
+    ansible.builtin.package:
+       name: msql-server
+       state: installed
+       
   - name: creating app directory
     ansible.builtin.file:
       path: /app
