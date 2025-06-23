@@ -16,9 +16,9 @@
       name: expense
   - name: installing mysql
     ansible.builtin.package:
-       name: msql-server
+       name: mysql-server
        state: installed
-       
+
   - name: creating app directory
     ansible.builtin.file:
       path: /app
