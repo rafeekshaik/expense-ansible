@@ -58,5 +58,13 @@
       login_password: DevOps321
       login_host: mysql.daws17s.online
       target: /app/schema/backend.sql
+  - name: daemon reload and enble, start backend
+    ansible.builtin.systemd_service:
+      daemon_reload: yes
+      state: restarted
+      name: backend
+      enabled: yes
+      
+
 
 
