@@ -55,7 +55,7 @@
       state: import
       name: all
       login_user: root
-      login_password: DevOps321
+      login_password: ExpenseApp@1
       login_host: mysql.daws17s.online
       target: /app/schema/backend.sql
   - name: daemon reload and enble, start backend
