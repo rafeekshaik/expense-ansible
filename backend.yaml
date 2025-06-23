@@ -1,6 +1,7 @@
 - name: installing nodejs
   hosts: backend
   become: yes
+  
   tasks:
   - name: disabling nodejs 16
     ansible.builtin.command: dnf module disable nodejs -y
@@ -42,3 +43,13 @@
     ansible.builtin.copy:
       src: backend.service
       dest: /etc/systemd/system/backend.service
+  - name: load the schema to the database
+    community.mysql.mysql_db:
+      state: import
+      name: all
+      login_user: root
+      login_password: DevOps321
+      login_host: mysql.daws17s.online
+      target: /app/schema/backend.sql
+
+      
