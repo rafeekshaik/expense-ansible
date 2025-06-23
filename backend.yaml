@@ -19,6 +19,10 @@
     ansible.builtin.package:
        name: mysql-server
        state: installed
+  - name: installing PyMySQL
+    ansible.builtin.pip:
+      name: PyMySQL
+      executable: pip3.9
 
   - name: creating app directory
     ansible.builtin.file:
@@ -52,4 +56,4 @@
       login_host: mysql.daws17s.online
       target: /app/schema/backend.sql
 
-      
+
