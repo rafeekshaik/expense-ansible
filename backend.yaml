@@ -33,4 +33,8 @@
   - name: installing npm module
     community.general.npm:
       path: /app
-      
+  
+  - name: copying backend service file
+    ansible.builtin.copy:
+      src: backend.service
+      dest: /etc/systemd/system/backend.service
