@@ -16,3 +16,10 @@
     ansible.builtin.file:
       path: /usr/share/nginx/html
       state: absent
+   
+
+  - name: creating html directory
+    ansible.builtin.file:
+       path: /usr/share/nginx/html
+       state: present
+       
